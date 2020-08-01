@@ -1,4 +1,3 @@
-# DICOM Dictionary for Julia
 dcm_dict = Dict(
 (0x0002, 0x0000) => ["File Meta Information Group Length", "UL", "1"],
 (0x0002, 0x0001) => ["File Meta Information Version", "OB", "1"],
