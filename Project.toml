@@ -1,0 +1,13 @@
+name = "DICOM_Dictionary"
+uuid = "1a73b0d9-20e4-4f70-aeb3-a0fcb72d4fb3"
+authors = ["Zaki A. <zaki@live.ca> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1.5"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
