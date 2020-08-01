@@ -6,12 +6,10 @@ setup_git() {
   git config --global user.name "Travis CI"
 }
 
-copy_file() {
-    cp test/dcm_dict.jl ./dcm_dict.jl
-}
-
 commit_file() {
-  git checkout -b dcm_dict
+  git checkout --orphan dcm_dict
+  git rm -rf .
+  cp test/dcm_dict.jl ./dcm_dict.jl
   git add dcm_dict.jl
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
@@ -22,6 +20,5 @@ push_to_github() {
 }
 
 setup_git
-copy_file
 commit_file
 push_to_github
