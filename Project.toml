@@ -1,4 +1,4 @@
-name = "DICOM_Dictionary"
+name = "DICOMDictionary"
 uuid = "1a73b0d9-20e4-4f70-aeb3-a0fcb72d4fb3"
 authors = ["Zaki A. <zaki@live.ca> and contributors"]
 version = "0.1.0"

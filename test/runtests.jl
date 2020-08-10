@@ -1,7 +1,7 @@
-using DICOM_Dictionary
+using DICOMDictionary
 using Test
 
-@testset "DICOM_Dictionary.jl" begin
+@testset "DICOMDictionary.jl" begin
   make_dicom_dictionary("dcm_dict.jl")
 end
 
