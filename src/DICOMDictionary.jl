@@ -29,7 +29,7 @@ function parse_chapter(xml, chaptername)
     registry = []
     for row in tablerows
         entry = parse_tablerow(row)
-        if entry.tag !== (0x0000,0x0000)
+        if entry.tag !== (0x0000,0x0000) && !isempty(entry.keyword)
             # (0x0000, 0x0000) is failure to parse tag
             # this is because some tags contain 'xx'
             push!(registry, entry)
