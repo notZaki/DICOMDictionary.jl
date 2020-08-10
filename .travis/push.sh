@@ -9,7 +9,7 @@ setup_git() {
 send_to_github() {
   git checkout --orphan dcm_dict
   git rm -rf .
-  git remote add origin-pages https://${GH_TOKEN}@github.com/notZaki/DICOM_Dictionary.jl > /dev/null 2>&1
+  git remote add origin-pages https://${GH_TOKEN}@github.com/notZaki/DICOMDictionary.jl > /dev/null 2>&1
   git pull origin-pages dcm_dict
   cp test/dcm_dict.jl ./dcm_dict.jl
   git add dcm_dict.jl
