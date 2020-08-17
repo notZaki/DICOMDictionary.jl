@@ -59,7 +59,8 @@ find_node(nodes, name) = only(find_nodes(nodes, name))
 function parse_tablerow(nodes::EzXML.Node)
     d = strip.(nodecontent.(elements(nodes)))
     tag = intify(d[1])
-    return (; tag = tag, keyword = d[3], vr = d[4], vm = d[5])
+    keyword = replace(d[3], "\u200b" => "") # Delete zero-width spaces
+    return (; tag = tag, keyword = keyword, vr = d[4], vm = d[5])
 end
 
 function intify(tag)
