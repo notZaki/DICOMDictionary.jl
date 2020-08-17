@@ -75,7 +75,7 @@ end
 
 function write_registry(io, registry)
    for entry in registry
-        out = "$(entry.tag) => [\"$(entry.keyword)\", \"$(entry.vr)\", \"$(entry.vm)\"],\n"
+        out = "$(entry.tag) => [:$(entry.keyword), :$(entry.vr), \"$(entry.vm)\"],\n"
         write(io, out)
     end
     return nothing
