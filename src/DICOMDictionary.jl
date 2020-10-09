@@ -60,7 +60,12 @@ function parse_tablerow(nodes::EzXML.Node)
     d = strip.(nodecontent.(elements(nodes)))
     tag = intify(d[1])
     keyword = replace(d[3], "\u200b" => "") # Delete zero-width spaces
-    return (; tag = tag, keyword = keyword, vr = d[4], vm = d[5])
+    vr = d[4]
+    # Some elements can have variable VR, e.g. "US or SS". Pick the first one.
+    if length(vr) > 2
+        vr = vr[1:2]
+    end
+    return (; tag = tag, keyword = keyword, vr = vr, vm = d[5])
 end
 
 function intify(tag)
